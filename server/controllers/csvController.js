@@ -71,11 +71,11 @@ export const uploadCSV = async (req,res) => {
                         totalInvalid++;
                         continue;
                     }
-
+                    console.log(csvData[x]);
                     // Create a new data object and save it to the database
                     const newData = new Data({
                         name: csvData[x].Name,
-                        email: csvData[x].Emai,
+                        email: csvData[x].Email,
                         phoneNumber: csvData[x].Phone,
                         gender: csvData[x].Gender,
                         address: csvData[x].Address,
@@ -91,12 +91,12 @@ export const uploadCSV = async (req,res) => {
                 console.log(totalData);
                 console.log(totalUploaded);
                 res.send({
-                    totalData,
-                    totalUploaded,
-                    totalDuplicate,
-                    totalInvalid,
-                    totalIncomplete,
-                  });    
+                    'totalData': totalData,
+                    'totalUploaded': totalUploaded,
+                    'totalDuplicate': totalDuplicate,
+                    'totalInvalid': totalInvalid,
+                    'totalIncomplete': totalIncomplete,
+                  });
                 
                
             });
