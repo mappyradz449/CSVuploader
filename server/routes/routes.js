@@ -4,6 +4,7 @@ import multer from 'multer';
 import dataSchema from '../models/data.js';
 import { uploadCSV } from '../controllers/csvController.js';
 import upload from '../utils/upload.js';
+//import { getCsvData } from '../../client/src/services/api.js';
 
 // const storage = multer.diskStorage({
 //     destination:(req,file,cb) => {
@@ -21,6 +22,7 @@ import upload from '../utils/upload.js';
 const router = express.Router();  
 
 router.post('/upload', upload.single('file'), uploadCSV); 
+//router.get('/upload', uploadCSV);
 
 // router.route('/upload').post(upload.single("csv"), async (req,res) => {
 //     const jsonArray = await csv().fromFile(req.file.path);

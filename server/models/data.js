@@ -19,13 +19,13 @@ const fileSchema = new mongoose.Schema({
     },
     email: {
       type: String,
-      unique: true,
-      rrequired : true,
+      //unique: true,
+      required : true,
     },
 
     phoneNumber: {
       type: String,
-      unique: true,
+      //unique: true,
       required : true,
     },
     gender: {
